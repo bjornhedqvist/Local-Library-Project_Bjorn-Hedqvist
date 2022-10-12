@@ -42,12 +42,13 @@ function getBorrowersForBook(book = {}, accounts = []) {
     let foundBorrowerObj = accounts.find((borrowerObj) => {
       return borrowerObj.id === borrowerAccount.id;
     });
+    //alternative way to write line 48 below
     //foundBorrowerObj.returned = borrowerAccount.returned;
     //return foundBorrowerObj;
     return {...foundBorrowerObj, ...borrowerAccount}
   });
   return result.slice(0, 10);
-  // return result.filter((items, idx)=>idx < 10)
+  // more complicated way to write line 50 above: return result.filter((items, idx)=>idx < 10)
 }
 
 module.exports = {
